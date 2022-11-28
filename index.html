@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf=8" />
+        <meta name="viewport" content="width=device-width, initial scale=1.0" />
+        <title>Sanguine</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="shortcut icon" href="https://convertico.com/favicon/converted/1669558947.9301/_previmg.png" type="image/x-icon" />
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --main-color: #7e90d6;
+    --text-color: white;
+    --bg-color: #272729;
+    --big-font: 5rem;
+    --h2-font: 2.25rem;
+    --p-font: 0.9rem;
+}
+
+*::selection {
+    background:var(--main-color);
+    color: white;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+span.moon .material-symbols-outlined {
+    font-size: 60px;
+    vertical-align: middle;
+    color: var(--main-color);
+}
+
+body {
+    color: var(--text-color);
+    background: var(--text-color);
+}
+
+body:hover {
+    cursor: default;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 100px;
+    background: var(--bg-color);
+}
+
+.logo {
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 2.4rem;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a{
+    color: var(--text-color);
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: var(--main-color);
+    transition: .4s;
+}
+
+.menu {
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+.home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url(https://wallpaperaccess.com/full/498475.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    min-height: 100vh;
+    max-width: 100%;
+}
+
+.home-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.home-text h1{
+    font-size: 70px;
+}
+
+.home-text h2{
+    font-weight: 100;
+    font-size: 18px;
+}
+
+.price {
+    padding: 100px 25.5%
+}
+
+.price h1, p {
+    color: black;
+    text-align: center;
+}
+
+.price p {
+    font-weight: 300;
+    margin-bottom: 5%;
+}
+
+.price h1 {
+    font-size: 40px;
+}
+
+br
+{
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+}
+
+.price .row {
+    margin-top: 2%;
+    display: grid;
+    width: 200px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    justify-content: space-between;
+}
+
+.price-col .button {
+    color: black;
+    text-align: center;
+    background: #e6e9f2;
+    border-radius: 10px;
+    padding: 35px 75px;
+    box-sizing: border-box;
+    transition: .4s;
+
+}
+
+.price-col .button:hover {
+    color: white;
+    background: #272729;
+    transition: .3s;
+    cursor: default;
+}
+
+.middle {
+    font-style: italic;
+    font-size: 75px;
+}
+
+.bottom {
+    color: white;
+    display: block;
+    background-color: #272729;
+    padding: 10px;
+    border-radius: 10px 10px 10px;
+    transition: .5s;
+}
+
+.bottom:hover {
+    cursor: pointer;
+    background-color: #7e90d6;
+    color: black;
+    transition: 0.2s;
+    transform: scale(1.1);
+    transition-timing-function: ease-out;
+}
+
+.bottom a {
+    color: white;
+}
+
+.bottom:active {
+    color: white;
+    transform: scale(0.99);
+}
+
+.check {
+    list-style-type: none;
+    padding: 0;
+    border: 1px solid #e6e9f2;
+    color: black;
+    background: #e6e9f2;
+    border-radius: 10px 10px 10px;
+    font-size: 13px;
+}
+  
+.check li {
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd;
+}
+  
+.check li:last-child {
+    border-bottom: none;
+}
+
+.check .material-symbols-outlined {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.about {
+    padding: 20px 24%
+}
+
+.about h1, p {
+    color: black;
+    text-align: center;
+}
+
+.about p {
+    font-weight: 300;
+    margin-bottom: 5%;
+}
+
+.about h1 {
+    font-size: 40px;
+}
+
+.about .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, auto));
+    grid-gap: 4.5rem;
+    margin-top: 4rem;
+}
+
+.about-col {
+    text-align: center;
+}
+
+.about-col .material-symbols-outlined {
+    text-align: center;
+    color: #7e90d6;
+    font-size: 50px;
+}
+
+.about-col h3 {
+    font-size: 23px;
+    color: black;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.about-col p {
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.cta {
+    margin-top: 70px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url(https://wallpaperaccess.com/full/450520.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    justify-content: space-between;
+    min-height: 30vh;
+    max-width: 100%;
+    text-align: center;
+}
+
+.cta h2 {
+    padding-top: 80px;
+    margin-top: 30px;
+    font-size: 25px;
+    padding-bottom: 20px;
+}
+
+.cta a{
+    color: white;
+    display: inline-block;
+    background-color: #272729;
+    padding: 10px;
+    border-radius: 10px 10px 10px;
+    font-size: 1rem;
+    transition: .2s;
+}
+
+.cta a:hover {
+    cursor: pointer;
+    background-color: #7e90d6;
+    color: black;
+    transition: 0.2s;
+    transform: scale(1.05);
+    transition-timing-function: ease;
+}
+
+.cta a:active {
+    transform: scale(0.99);
+}
+
+.footer {
+    background: #272729;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 70px 24%;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+
+.col {
+    width: 25%;
+}
+
+.col h4 {
+    font-size: 1.2rem;
+    position: relative;
+    color: white;
+}
+
+.col ul li:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.col ul li a{
+    color: #acaeb6;
+    font-size: .9rem;
+    display: block;
+    text-transform: capitalize;
+    transition: .4s;
+}
+
+.col ul li a:hover {
+    color: white;
+    transform: translateX(-10px);
+}
+
+.col .social {
+    width: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.col .social a {
+    height: 35px;
+    width: 35px;
+    color: white;
+    background: black;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+.col .social a:hover {
+    transform: scale(1.1);
+    color: black;
+    background: white;
+}
+
+.col .social a:active {
+    transform: scale(0.9);
+}
+
+.texta {
+    border: none;
+    padding: 5px;
+    border-radius: 10px 10px 10px;
+}
+
+.texta:focus {
+    outline: none ! important;
+}
+
+.btnn {
+    color: white;
+    background: black;
+    padding: 5px;
+    margin-top: 20px;
+    border-radius: 10px 10px 10px;
+    transition: .2s;
+}
+
+.btnn:hover {
+    cursor: pointer;
+    color: black;
+    background: white;
+    transition: .2s;
+    transform: scale(1.1);
+}
+
+.btnn:active {
+    transform: scale(1);
+}
+
+@media (max-width: 1560px) {
+    header {
+        padding: 12px 40px;
+    }
+    :root {
+        --big-font:3.5rem;
+        --h2-font:2rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .home .home-text {
+        font-size: 20%;
+    }
+    .home, .price, .about, .cta {
+        padding: 50px 8%;
+    }
+    .row {
+        flex-direction: column;
+    }
+    .cta h2 {
+        padding-top: 20px;
+        margin-top: 10px;
+    }
+    .footer {
+        padding: 30px 10%;
+        max-width: 100%;
+        height: auto;
+        object-fit: none;
+    }
+    .home-text {
+        height: 55px;
+    }
+
+    .home-text h1{
+        font-size: 6vw;
+        width: 700px;
+    }
+    .navbar li a {
+        font-size: 13px;
+    }
+    header {
+        padding: 10px 20px;
+    }
+
+    header .logo {
+        font-size: 24px;
+    }
+
+    span.moon .material-symbols-outlined {
+        font-size: 40px;
+    }
+
+    .home-text h2{
+        font-size: 13px;
+    }
+
+    #details {
+        align-content: center;
+        width: 700px;
+    }
+
+    .price {
+        padding: 90px 10%
+    }
+
+    .price h1 {
+        font-size: 30px;
+    }
+
+    .price p {
+        font-size: 13px
+    }
+
+    .price-col .button {
+        padding: 10px 20px;
+    }
+
+    .price-col {
+        width: 200px;
+        grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+    }
+
+    .col h4 {
+        font-size: 12px;
+    }
+    
+    .col ul li a {
+        font-size: 10px;
+    }
+
+    .col .social {
+        width: 80px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .col .social a {
+        height: 30px;
+        width: 30px;
+        font-size: 1rem;
+        margin: 5px;
+    }
+    .middle {
+        font-size: 50px;
+    }
+
+    .bottom {
+        font-size: 14px;
+
+    }
+
+    .check {
+        font-size: 10px;
+    }
+
+    .check .material-symbols-outlined {
+        font-size: 15px;
+    }
+
+    .about h1 {
+        font-size: 30px;
+    }
+
+    .about p {
+        font-size: 13px
+    }
+}
+    </style>
+    </head>
+    <body>
+        <header>
+            
+            <a href="#" class="logo"><span class="moon">
+            <span class="material-symbols-outlined">
+                    dark_mode
+            </span>
+            </span>Sanguine</a>
+            <span class="menu">
+            <span class="material-symbols-outlined">
+                menu
+            </span>
+            </span>
+            <ul class="navbar">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </header>
+
+        <!--Home-->
+        <section class="home" id="home">
+            <div class="home-text">
+                <h1>THE BEST MEDIA SITE</h1>
+                <br>
+                <h2>Your "One Stop Media Shop" for all things multimedia related!<br>
+                See more details below!
+                </h2>
+            </div>
+        </section>
+
+        <br  id="services">
+
+        <!--Services-->
+        <section class="price">
+            <h1>Services We Offer</h1>
+            <p>Prices differ from one offer to the next. Choose wisely!</p>
+            <div class="row" id="details">
+                <div class="price-col">
+                    <div class="button">
+                        <span class="top">Basic</span><br><br><br>
+                        <span class="middle">$25</span><br><br>
+                        <span class="bottom">
+                        <a href="#details">
+                        Details below</a></span>
+                    </div>
+                    <br>
+                    <ul class="check">
+                        <li><span class="material-symbols-outlined">
+                            task_alt
+                            </span>Quality works</li>
+                        <li><span class="material-symbols-outlined" >
+                            task_alt
+                            </span>Affordable price</li>
+                    </ul>
+                </div>
+
+                <div class="price-col">
+                    <div class="button">
+                        <span class="top">Standard</span><br><br><br>
+                        <span class="middle">$50</span><br><br>
+                        <span class="bottom"><a href="#details">
+                            Details below</a></span>
+                    </div>
+                    <br>
+                    <ul class="check">
+                        <li><span class="material-symbols-outlined">
+                            task_alt
+                            </span>Higher quality works</li>
+                        <li><span class="material-symbols-outlined" >
+                            task_alt
+                            </span>The standard price</li>
+                    </ul>
+                </div>
+
+                <div class="price-col">
+                    <div class="button">
+                        <span class="top">Pro</span><br><br><br>
+                        <span class="middle">$75</span><br><br>
+                        <span class="bottom"><a href="#details">
+                            Details below</a></span>
+                    </div>
+                    <br>
+                    <ul class="check">
+                        <li><span class="material-symbols-outlined">
+                            task_alt
+                            </span>Highest quality works</li>
+                        <li><span class="material-symbols-outlined">
+                            task_alt
+                            </span>Premium cost for premium output</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+        <br id="about">
+
+        <!--About-->
+        <section class="about">
+            <h1>About Us</h1>
+            <p>Know us a bit more!</p>
+            <div class="row">
+                <div class="about-col">
+                    <span class="material-symbols-outlined">
+                    flag
+                    </span>
+                    <h3>Our Mission</h3>
+                    <p>We're proud and motivated that customers rely on us to create and serve their multimedia needs. We take that responsibility seriously, and have fun fulfilling that mission together.</p>
+                </div>
+                <div class="about-col">
+                    <span class="material-symbols-outlined">
+                    person
+                    </span>
+                    <h3>Our People</h3>
+                    <p>We're working to turn our passion into a booming online website. We hope you enjoy our services as much as we enjoy offering them to you.</p>
+                </div>
+                <div class="about-col">
+                    <span class="material-symbols-outlined">
+                    sentiment_very_satisfied
+                    </span>
+                    <h3>Our Values</h3>
+                    <p>Our core behaviors were crafted by our employees. To this day, as our company grows, we use them as our guiding light toward maintaining the culture we've built and love.</p>
+                </div>
+        </section>
+
+        <br>
+        <!--Call to Action-->
+        <section class="cta">
+            <h2>We make high quality products <br> Everyday</h2>
+            <a href="#Let's Talk" class="btn">Let's talk</a>
+        </section>
+
+        <!--Footer-->
+        <section id="contact">
+            <div class="footer">
+                <div class="main">
+                    <div class="col">
+                        <h4>Menu Links</h4><br>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h4>Information</h4><br>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Impressum</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <div class="social">
+                            <a href="https://www.facebook.com/exzumy/"><i class='bx bxl-facebook-circle'></i></a>
+                            <a href="https://www.instagram.com/exzumy/"><i class='bx bxl-instagram-alt'></i></a>
+                            <a href="https://twitter.com/exzumy"><i class='bx bxl-twitter' ></i></a>
+                            <a href="https://www.youtube.com/channel/UC0DIgPx_REGhsld_bU-xnpQ"><i class='bx bxl-youtube' ></i></a>
+                        </div>
+                    </div>
+                    <div class="col" id="Let's Talk">
+                        <h4>Let's Talk</h4><br>
+                        <form action="mailto:202110434@feualabang.edu.ph" enctype="text/plain">
+                            <input class="texta" type="text" name="name" placeholder="Name"><br><br>
+                            <input class="texta" type="email" name="_subject" placeholder="Message"><br>
+                            <input class="btnn" type="submit" value="Send">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Javascript-->
+        <script type="text/javascript" src="js/script.js"></script>
+    </body>
+</html>
